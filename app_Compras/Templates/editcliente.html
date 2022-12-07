@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pedido</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{%static 'lib/plantillalt/plugins/fontawesome-free/css/all.min.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{%static 'lib/plantillalt/dist/css/adminlte.min.css'%}">
+
+  {% block title %}Admin clientes{% endblock %}
+  <div class="container ">
+    <div class="row">
+    <div class="col-6">
+      <form action="/guardarcliente/{{clientes.id}}" method="post">{% csrf_token %}
+        <div class="form-group">
+          <label for="dade" class="form-label">Codigo</label>
+          <input type="number" class="form-control" name="inputcodigo" value="{{clientes.id_cliente}}" id="inputcodigo" placeholder="Ingrese codigo">
+        </div>
+
+        <div class="form-group">
+          <label for="xcse" class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="inputnombre" value="{{clientes.nombre}}"  id="inputnombre" placeholder="Ingrese nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="incds" class="form-label">Apellido</label>
+          <input type="text" class="form-control" name="inputapellido" value="{{clientes.apellido}}" id="inputapellido" placeholder="Ingrese apellido">
+        </div>
+
+        <div class="form-group">
+          <label for="dcs" class="form-label">Direccion</label>
+          <input type="text" class="form-control" name="inputdireccion" value="{{clientes.factura}}" id="inputdireccion" placeholder="Ingrese Direccion">
+        </div>
+       
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+          <a href="/clientes/" class="btn btn-danger">Regresar</a>
+        </div>
+      </form>
+    </div>
+</div>

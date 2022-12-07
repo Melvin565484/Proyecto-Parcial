@@ -1,0 +1,78 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pedido</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{%static 'lib/plantillalt/plugins/fontawesome-free/css/all.min.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{%static 'lib/plantillalt/dist/css/adminlte.min.css'%}">
+
+{% block content %}
+  <h1>Registro de Usuario</h1>
+<div class="container ">
+    <div class="row">
+      <div class="offset-3 col-6">   
+        <form action="/registro/" method="post">{% csrf_token %}
+          <div class="row">
+            <div class="col-4">
+            <label for="dade" class="form-label">Usuario</label>
+            </div>
+            <div class="col-10">{{form.username}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <label for="dade" class="form-label">Nombre</label>
+            </div>
+            <div class="col-10">{{form.first_name}}</div>
+          </div>
+  
+          <div class="row">
+            <div class="col-4">
+              <label for="dade" class="form-label">Apellido</label>
+            </div>
+            <div class="col-10">{{form.last_name}}</div>
+          </div>
+  
+          <div class="row">
+            <div class="col-4">
+              <label for="dade" class="form-label">Correo</label>
+            </div>
+            <div class="col-10">{{form.email}}</div>
+          </div>
+  
+          <div class="row">
+            <div class="col-4">
+              <label for="dade" class="form-label">Contraseña</label>
+            </div>
+            <div class="col-10">{{form.password1}}</div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <label for="dade" class="form-label">Contraseña</label>
+            </div>
+            <div class="col-10">{{form.password2}}</div>
+          </div>
+          <div class="col-4">
+            <label for="dade" class="form-label"></label>
+          </div>
+          <div class="col-10"></div>
+         <div class="row">
+            <div class="col">
+              <button class="btn btn-success"> Registrarse</button>     
+            </div>
+            <div class="col">
+            <a href="/login/" class="btn btn-info">Tienes cuenta? Ingresa aqui</a>     
+            </div>
+         </div>
+      </form>
+    </div>
+</div>
+
+{% endblock %}
